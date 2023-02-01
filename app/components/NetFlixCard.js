@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image, Button, Linking } from "react-native";
 import ImgComponentPage from "./ImgComponent";
 
-const NetFlixComponentPage = () => {
+const NetFlixComponentPage = ({ navigation }) => {
     return (
         <>
             {/* <View style={{...styles.card_body_style, ... styles.poster_body}}> */}
@@ -21,13 +21,17 @@ const NetFlixComponentPage = () => {
                             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         </Text>
                     </View>
-                        <Button 
-                            title="React native"
-                            onPress={()=>Linking.openURL('https://reactnative.dev/docs/getting-started')}
-                        />
-                    <View>
+                    <Button
+                        title="React native"
+                        onPress={() => Linking.openURL('https://reactnative.dev/docs/getting-started')}
+                    />
 
-                    </View>
+                </View>
+                <View>
+                    <Button
+                        title="Go Back"
+                        onPress={()=>navigation.goBack()}
+                    />
                 </View>
             </View>
 
@@ -44,8 +48,8 @@ const styles = StyleSheet.create({
     imgage_body: {
         // height: 80,
         //below code is for heigh, width size adjust will container size korar jonno
-        height:undefined,
-        aspectRatio:1,
+        height: undefined,
+        aspectRatio: 1,
         width: '100%',
     },
     poster_body: {
